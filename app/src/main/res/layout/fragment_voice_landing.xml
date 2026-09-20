@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎙"
+        android:textSize="80sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="रियल-टाइम वाक् अनुवाद"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="शिक्षक हिन्दी बोलें → छात्रों को आदिवासी भाषा में सुनाई देगा।\nछात्र आदिवासी भाषा में जवाब दें → शिक्षक को हिन्दी में।"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="32dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/card_voice"
+        app:cardElevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ लक्ष्य विशेषताएँ"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• विलंबता &lt; 3 सेकंड\na\n• हिन्दी ⇄ Santhali / Ho / Mundari\n• ऑटो-स्पीक आउटपुट\n• शिक्षक / छात्र मोड स्विच\n• वार्तालाप मोड — बारी-बारी से सुने"
+                android:textSize="13sp"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="3dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLaunchVoice"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="वाक् अनुवाद शुरू करें / Start Voice Translation"
+        android:textSize="16sp"
+        app:icon="@android:drawable/ic_btn_speak_now"
+        app:iconGravity="textStart"/>
+</LinearLayout>

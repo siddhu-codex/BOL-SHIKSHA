@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.bolshiksha.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard_label"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_dashboard_to_translation"
+            app:destination="@id/translationFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_voiceTranslation"
+            app:destination="@id/voiceTranslationLandingFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_curriculum"
+            app:destination="@id/curriculumFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_worksheets"
+            app:destination="@id/worksheetsFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_flashcards"
+            app:destination="@id/flashcardsFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/translationFragment"
+        android:name="com.example.bolshiksha.ui.translation.TranslationFragment"
+        android:label="@string/translation_label"
+        tools:layout="@layout/fragment_translation" />
+
+    <fragment
+        android:id="@+id/voiceTranslationLandingFragment"
+        android:name="com.example.bolshiksha.ui.voice.VoiceTranslationLandingFragment"
+        android:label="@string/voice_label"
+        tools:layout="@layout/fragment_voice_landing" />
+
+    <fragment
+        android:id="@+id/curriculumFragment"
+        android:name="com.example.bolshiksha.ui.curriculum.CurriculumFragment"
+        android:label="@string/curriculum_label"
+        tools:layout="@layout/fragment_curriculum" />
+
+    <fragment
+        android:id="@+id/worksheetsFragment"
+        android:name="com.example.bolshiksha.ui.worksheets.WorksheetsFragment"
+        android:label="@string/worksheets_label"
+        tools:layout="@layout/fragment_worksheets" />
+
+    <fragment
+        android:id="@+id/flashcardsFragment"
+        android:name="com.example.bolshiksha.ui.flashcards.FlashcardsFragment"
+        android:label="@string/flashcards_label"
+        tools:layout="@layout/fragment_flashcards" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.bolshiksha.ui.settings.SettingsFragment"
+        android:label="@string/settings_label"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

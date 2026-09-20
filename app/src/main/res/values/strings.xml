@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">BOL SHIKSHA</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="dashboard_label">डैशबोर्ड / Dashboard</string>
+    <string name="translation_label">अनुवाद / Translation</string>
+    <string name="voice_label">वाक् अनुवाद / Voice Translation</string>
+    <string name="curriculum_label">पाठ्यक्रम / Curriculum</string>
+    <string name="worksheets_label">कार्यपत्र / Worksheets</string>
+    <string name="flashcards_label">फ्लैशकार्ड / Flashcards</string>
+    <string name="settings_label">सेटिंग्स / Settings</string>
+
+    <string name="translate_text_hint">यहाँ हिन्दी में लिखें…\nType Hindi text here…</string>
+    <string name="btn_translate">अनुवाद करें / Translate</string>
+    <string name="btn_clear">साफ़ / Clear</string>
+    <string name="output_placeholder">अनुवादित टेक्स्ट यहाँ दिखेगा\nTranslated output appears here</string>
+
+    <string name="login_welcome">स्वागत है / Welcome</string>
+    <string name="login_tagline">MTB-MLE सहायक • PALASH झारखंड</string>
+    <string name="login_subtitle">शिक्षकों के लिए ऑफ़लाइन मातृभाषा शिक्षण सहायक\nOffline mother-tongue teaching assistant</string>
+    <string name="login_username">उपयोगकर्ता नाम / Username</string>
+    <string name="login_phone">फ़ोन नंबर / Phone number</string>
+    <string name="login_password">पासवर्ड / Password</string>
+    <string name="login_create_account">खाता बनाएँ / Create account</string>
+    <string name="login_sign_in">साइन इन / Sign in</string>
+    <string name="login_or">या / or</string>
+    <string name="login_google">Google से साइन इन करें / Sign in with Google</string>
+    <string name="login_privacy">खाता बनाने पर आपका नाम Firebase में सुरक्षित रूप से सहेजा जाता है। पासवर्ड Firebase Authentication में रहता है।\nCreate account stores your username in Firebase. Passwords stay in Firebase Authentication.</string>
+    <string name="login_error">साइन इन नहीं हो सका / Sign-in failed</string>
+    <string name="login_cancelled">साइन इन रद्द किया गया / Sign-in cancelled</string>
+    <string name="signup_success">खाता बन गया / Account created</string>
+    <string name="signup_error">खाता नहीं बन सका / Could not create account</string>
+    <string name="username_required">उपयोगकर्ता नाम लिखें / Enter a username</string>
+    <string name="username_invalid">3–20 अक्षर, केवल a–z, 0–9, . और _\nUse 3–20 characters: a–z, 0–9, . or _</string>
+    <string name="username_taken">यह नाम पहले से लिया गया है / Username already taken</string>
+    <string name="password_required">पासवर्ड लिखें / Enter a password</string>
+    <string name="password_too_short">पासवर्ड कम से कम 6 अक्षर का हो / Password must be at least 6 characters</string>
+    <string name="phone_required">फ़ोन नंबर लिखें / Enter a phone number</string>
+    <string name="phone_invalid">10 अंकों का सही मोबाइल नंबर लिखें / Enter a valid 10-digit mobile number</string>
+    <string name="sign_out">साइन आउट / Sign out</string>
+    <string name="signed_in_as">साइन इन / Signed in</string>
+    <string name="google_web_client_id">478633410473-uovloo2v809fi3l0vtkoffqrs743hp2r.apps.googleusercontent.com</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "478633410473",
+    "project_id": "bol-shiksha",
+    "storage_bucket": "bol-shiksha.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478633410473:android:6b7751105314232a4f4eb8",
+        "android_client_info": {
+          "package_name": "com.example.bolshiksha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478633410473-4q4hj7l99p5ess2g5e1lo47ff7u4r667.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bolshiksha",
+            "certificate_hash": "37aefd905378a6906e15c96a062089ee848fe12e"
+          }
+        },
+        {
+          "client_id": "478633410473-uovloo2v809fi3l0vtkoffqrs743hp2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDIaFbl4USmZQARrKUNU6PF6JHrVqH0lM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478633410473-uovloo2v809fi3l0vtkoffqrs743hp2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="शिक्षक भाषा"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"/>
+                    <Spinner
+                        android:id="@+id/spinnerTeacher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card_stroke"
+                        android:padding="6dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="छात्र भाषा"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"/>
+                    <Spinner
+                        android:id="@+id/spinnerStudent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card_stroke"
+                        android:padding="6dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnModeTeacher"
+                        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👨‍🏫 शिक्षक"
+                        android:checkable="true"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnModeStudent"
+                        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👧 छात्र"
+                        android:checkable="true"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔊 ऑटो"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="6dp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchSpeakerMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="स्थिति: तैयार • माइक बटन दबाएँ"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:textColor="@color/primary_dark"
+                android:padding="8dp"
+                android:background="@color/primary_light"
+                android:layout_marginBottom="10dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/card_voice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="👨‍🏫 शिक्षक (हिन्दी)"
+                            android:textStyle="bold"
+                            android:textColor="#0D47A1"/>
+                        <ImageButton
+                            android:id="@+id/btnPlayStudent"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@android:drawable/ic_media_play"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="प्ले"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTeacherText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:padding="8dp"
+                        android:layout_marginTop="6dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginVertical="6dp"/>
+                    <TextView
+                        android:id="@+id/tvTranslatedTeacher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:text=""
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D47A1"
+                        android:padding="8dp"
+                        android:background="@drawable/bg_card_stroke"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⬇⬆"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginVertical="4dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/card_curriculum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="👧 छात्र (आदिवासी भाषा)"
+                            android:textStyle="bold"
+                            android:textColor="@color/accent"/>
+                        <ImageButton
+                            android:id="@+id/btnPlayTeacher"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@android:drawable/ic_media_play"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="प्ले"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvStudentText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:padding="8dp"
+                        android:layout_marginTop="6dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginVertical="6dp"/>
+                    <TextView
+                        android:id="@+id/tvTranslatedStudent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:text=""
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/accent"
+                        android:padding="8dp"
+                        android:background="@drawable/bg_card_stroke"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvLatency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/accent"
+                android:layout_marginBottom="14dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClear"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:icon="@android:drawable/ic_input_delete"
+                    app:iconGravity="textStart"
+                    android:contentDescription="साफ़"
+                    android:layout_marginEnd="12dp"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_btn_speak_now"
+                    android:contentDescription="माइक"
+                    app:backgroundTint="@color/primary"
+                    android:layout_marginHorizontal="12dp"
+                    app:fabCustomSize="88dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConversation"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:text="🔄 वार्तालाप"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

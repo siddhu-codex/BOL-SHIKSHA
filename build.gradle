@@ -1,0 +1,48 @@
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.google.services) apply false
+}
+
+import java.security.KeyStore
+import java.security.MessageDigest
+import java.security.cert.X509Certificate
+
+// Android Studio's built-in task is signingReport. This project was running
+// "signinreport", which does not exist, so SHA-1 never printed.
+tasks.register("signinreport") {
+    group = "help"
+    description = "Print debug keystore SHA-1 / SHA-256 for Firebase and Google Sign-In"
+    doLast {
+        def storeFile = file("${System.getProperty('user.home')}/.android/debug.keystore")
+        if (!storeFile.exists()) {
+            throw new GradleException(
+                    "Debug keystore not found at ${storeFile.absolutePath}. " +
+                            "Run the app once from Android Studio, then run this task again.")
+        }
+        def ks = KeyStore.getInstance(KeyStore.getDefaultType())
+        storeFile.withInputStream { stream ->
+            ks.load(stream, "android".toCharArray())
+        }
+        def cert = (X509Certificate) ks.getCertificate("androiddebugkey")
+        if (cert == null) {
+            throw new GradleException("Alias androiddebugkey was not found in ${storeFile.absolutePath}")
+        }
+        def toColonHex = { digest ->
+            digest.collect { String.format("%02X", it) }.join(":")
+        }
+        def sha1 = toColonHex(MessageDigest.getInstance("SHA-1").digest(cert.encoded))
+        def sha256 = toColonHex(MessageDigest.getInstance("SHA-256").digest(cert.encoded))
+        println ""
+        println "========== DEBUG SIGNING CERTIFICATE =========="
+        println "Store:   ${storeFile.absolutePath}"
+        println "Alias:   androiddebugkey"
+        println "SHA-1:   ${sha1}"
+        println "SHA-256: ${sha256}"
+        println "==============================================="
+        println "Paste SHA-1 (and SHA-256) into Firebase Console > Project settings > Your apps."
+        println ""
+        file("${rootDir}/sha1-report.txt").setText(
+                "SHA-1: ${sha1}\nSHA-256: ${sha256}\nStore: ${storeFile.absolutePath}\n",
+                "UTF-8")
+    }
+}
