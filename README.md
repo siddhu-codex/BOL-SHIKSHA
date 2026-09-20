@@ -222,23 +222,9 @@ git clone https://github.com/siddhu-codex/BOL-SHIKSHA.git
 
 ---
 
-# 👨‍💻 Team
-
-**Team Name:** BOL SHIKSHA
-
-| Member | Role |
-|---------|------|
-| Siddhraj Patil | Android Developer |
-| Team Member | Firebase Developer |
-| Team Member | UI/UX Designer |
-| Team Member | Backend Developer |
-
----
-
 # 🔮 Future Scope
 
 - Offline Learning Mode
-- OCR Text Recognition
 - More Regional Languages
 - Teacher Dashboard
 - Student Progress Analytics
